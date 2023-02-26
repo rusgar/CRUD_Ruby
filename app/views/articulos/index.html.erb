@@ -1,0 +1,22 @@
+<h1>Articulos:</h1>
+
+<div>
+<%= Date.today %>
+</div>
+<br>
+
+
+<% @articulos.each do |articulo|%>
+     <%= link_to articulo_path(articulo) do %>
+     <h2><%= articulo.title %></h2>
+     <span><%= articulo.price %>€</span>
+     <% end %>
+
+<% end %>
+<br><br>
+</div>
+<%= @articulos.count %>
+<div>
+
+
+
