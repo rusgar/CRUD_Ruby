@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  price: 1
+Adidas:
+  title: superboost
+  description: suela ergomica ajustable
+  price: 100 
 
-two:
-  title: MyString
-  description: MyText
-  price: 1
+Nike:
+  title: pegasus 39
+  description: Ideal pàra iniciados
+  price: 85 
