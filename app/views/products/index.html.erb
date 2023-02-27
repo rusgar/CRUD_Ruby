@@ -1,0 +1,17 @@
+<h1>Productos:</h1>
+
+<%= 1 +1  %>
+<div>
+<%= Date.today %>
+</div>
+<%= @products.count %>
+<div>
+
+
+<% @products.each do |product|%>
+  <%= link_to product_path(product), class: 'product' do %>
+     <h2><%= product.title %></h2>
+     <span><%= product.price %>€</span>
+  <% end %>
+<% end %>
+

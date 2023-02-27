@@ -1,0 +1,24 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+PS4:
+  title: ps4 falla
+  description: esta en perfecto estado
+  price: 200
+  
+
+switch:
+  title: Nintendo Switch
+  description: Rota la palanca
+  price: 85
+
+nintendo64:
+  title: Nintendo 64 en buen estado
+  description: Con su caja, solo tiene algún pequeño arañazo
+  price: 190
+ 
+
+megadrive:
+  title: Sega Megadrive
+  description: Funciona perfectamente, solo consola
+  price: 90
+  
