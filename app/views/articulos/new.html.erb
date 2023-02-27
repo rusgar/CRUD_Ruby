@@ -1,15 +1,11 @@
 <h2>Anadir articulo </h2>
 
 <%= form_with model: @articulo do | form| %>
- <%
-=begin%>
- <% @articulo errors.full_messages.each do |error| %>
+ <% @articulo.errors.full_messages.each do |error| %>
    <div>
         <%= error %>
    </div>
- <% end %> 
-<%
-=end%>
+ <% end %>
  <div>
    <%= form.label :title %>
    <%= form.text_field :title  %>
