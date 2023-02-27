@@ -6,7 +6,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
    get products_path
    
    assert_response :success
-   assert_select '.product', 2
+   assert_select '.product', 4
   end
 
   test ' render a detailed product page' do
@@ -17,6 +17,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select '.description', 'esta en perfecto estado'
     assert_select '.price', '200€'
   end
+
    test 'render a new product form' do
    get new_product_path 
 
@@ -24,15 +25,36 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
    assert_select 'form'
    end  
 
-   test 'alow to create a new product' do
+   test 'allow to create a new product' do
     post products_path, params: { 
         product:{
-            title:'Nintendo',
-            description:'le faltan los cables',
-            price:'150'}
+            title:'Nintendo Switch',
+            description:'Rota la palanca',
+            price:'85'}
         }
         assert_redirected_to products_path
         assert_equal flash[:notice], 'Producto guardado corrrectamente'
     end
+
+    test 'does not allow to create a new product with empty fields' do
+      post products_path, params: {
+        product: {
+          title: '',
+          description: 'Le faltan los cables',
+          price: 45
+        }
+      }
+  
+      assert_response :unprocessable_entity
+    end
+
+    test 'render a edit product form' do
+      get edit_product_path (products(:PS4))
+   
+      assert_response :success
+      assert_select 'form'
+      end  
+    
+    
    
 end
