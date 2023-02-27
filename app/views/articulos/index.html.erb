@@ -7,7 +7,7 @@
 
 
 <% @articulos.each do |articulo|%>
-     <%= link_to articulo_path(articulo), class="articulo" do %>
+     <%= link_to articulo_path(articulo), class:"articulo" do %>
      <h2><%= articulo.title %></h2>
      <span><%= articulo.price %>€</span>
      <% end %>

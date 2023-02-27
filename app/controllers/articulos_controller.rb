@@ -4,7 +4,11 @@ class ArticulosController < ApplicationController
    end 
 
    def show
-    @articulo = Articulo.find(params[:id])
+     @articulo = Articulo.find(params[:id])
     
-  end
+   end
+
+    def new
+       
+    end
 end
