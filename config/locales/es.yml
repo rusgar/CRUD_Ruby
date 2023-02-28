@@ -1,0 +1,36 @@
+es:
+  activerecord:
+    models:
+      product: Producto
+    attributes:
+      product:
+       title: 'Titulo'
+       description: 'Descripcion'
+       price: 'Precio'
+       photo: 'Foto'
+    errors:
+      models:
+       product:
+        attributes:
+         title:
+            blank: ': Este campo no puede estar vacio'
+         description:
+            blank: ': Este campo no puede estar vacio'
+         price:
+            blank: ': Este campo no puede estar vacio' 
+  common:
+    confirm: '¿Estás Seguro?'
+  products:
+    edit:
+      title: 'Editar Zapatilla'
+    new:
+     title: 'Zapatilla Nueva'
+    index:
+     title: 'Zapatillas de Running:'
+     title_1: 'Zapatillas'
+    create:
+     created: 'Producto guardado correctamente'
+    update:
+     updated: 'Tu producto se ha actualizado correctamente'
+    destroy:
+      destroyed: 'Tu producto se ha eliminado correctamente'

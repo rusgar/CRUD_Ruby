@@ -8,8 +8,8 @@
 
 <%= link_to 'Editar Producto', edit_product_path(@product) %><br>
 
-<%= link_to 'Elimnar Producto', product_path(@product), data:{ 
+<%= link_to 'Eliminar Producto', product_path(@product), data:{ 
     turbo_method: :delete,
-    turbo_confirm: '¿Estas Seguro?'
+    turbo_confirm: t('common.confirm')
 
  } %>
