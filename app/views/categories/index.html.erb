@@ -1,14 +1,6 @@
-<p style="color: green"><%= notice %></p>
+<h2><%= t('.title') %></h2>
+<div>Fecha
+<%= Date.today %>
+<%= render partial: 'category', collection: @categories %>
 
-<h1>Categories</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Show this category", category %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New category", new_category_path %>
+<%= link_to t('.new'), new_category_path %>
