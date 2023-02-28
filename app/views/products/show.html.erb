@@ -6,10 +6,10 @@
 
 <span class='price'><%= @product.price %>€</span><br>
 
-<%= link_to 'Editar Producto', edit_product_path(@product) %><br>
+<%= button_to link_to 'Editar Producto', edit_product_path(@product),style: "color: green;" %><br>
 
-<%= link_to 'Eliminar Producto', product_path(@product), data:{ 
+<%= button_to link_to 'Eliminar Producto', product_path(@product),data:{ 
     turbo_method: :delete,
-    turbo_confirm: t('common.confirm')
+    turbo_confirm: t('common.confirm'),
 
- } %>
+ },style: "color: red;" %>
