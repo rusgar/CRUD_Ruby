@@ -1,4 +1,8 @@
 es:
+  shared:
+    header:
+     add: 'Añadir Producto'
+     categories: ' Añadir Tipo'      
   activerecord:
     models:
       product: Producto
