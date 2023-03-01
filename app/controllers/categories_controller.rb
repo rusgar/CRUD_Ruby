@@ -1,20 +1,16 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order(name: :asc)
   end
-
-
 
   def new
     @category = Category.new
   end
 
-
   def edit
     category
   end
-
 
   def create
     @category = Category.new(category_params)
@@ -24,7 +20,6 @@ class CategoriesController < ApplicationController
       render :new, status: :unprocessable_entity    
     end
   end
-
 
   def update
      if category.update(category_params)

@@ -4,21 +4,39 @@ PS4:
   title: ps4 falla
   description: esta en perfecto estado
   price: 200
+  category: videogames
   
 
 switch:
   title: Nintendo Switch
   description: Rota la palanca
   price: 85
+  category: videogames
 
 nintendo64:
   title: Nintendo 64 en buen estado
   description: Con su caja, solo tiene algún pequeño arañazo
   price: 190
+  category: videogames
  
 
 megadrive:
   title: Sega Megadrive
   description: Funciona perfectamente, solo consola
   price: 90
+  category: videogames
+
+air:
+  title: Macbook Air
+  description: Le falla la batería
+  price: 250
+  category: computers
+
+imac:
+  title: iMac 27" 2015
+  description: i5 con 8gb de ram y SSD
+  price: 90
+  category: computers
+
+
   

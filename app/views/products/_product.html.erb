@@ -1,5 +1,5 @@
 <%= link_to product_path(product), class: 'product' do %>
      <p><strong>Modelo:</strong> <%= product.title %></p>
+     <%= image_tag product.photo, width:100 if product.photo.attached?%><br>&rarr;
      <span><%= product.price %>€</span>
-     <%= image_tag product.photo, width:100 if product.photo.attached?%>
 <% end %><hr>

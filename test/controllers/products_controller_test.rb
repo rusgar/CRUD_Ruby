@@ -6,7 +6,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
    get products_path
    
    assert_response :success
-   assert_select '.product', 4
+   assert_select '.product', 6
   end
 
   test ' render a detailed product page' do
@@ -16,6 +16,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select '.title', 'ps4 falla'
     assert_select '.description', 'esta en perfecto estado'
     assert_select '.price', '200€'
+   
   end
 
    test 'render a new product form' do
@@ -30,7 +31,8 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         product:{
             title:'Nintendo Switch',
             description:'Rota la palanca',
-            price:'85'}
+            price:'85',
+            category_id: categories(:videogames).id}
         }
         assert_redirected_to products_path
         assert_equal flash[:notice], 'Producto guardado correctamente'
@@ -41,7 +43,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
         product: {
           title: '',
           description: 'Le faltan los cables',
-          price: 45
+          price: 45          
         }
       }
   
