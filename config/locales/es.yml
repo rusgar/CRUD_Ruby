@@ -28,10 +28,11 @@ es:
     edit:
       title: 'Editar Zapatilla'
     new:
-     title: 'Zapatilla Nueva'
+     title: 'Zapatilla Nueva'   
     index:
      title: 'Zapatillas de Running:'
      title_1: 'Zapatillas'
+     all: 'Todos'
     create:
      created: 'Producto guardado correctamente'
     update:
