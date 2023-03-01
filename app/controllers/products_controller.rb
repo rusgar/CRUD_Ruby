@@ -7,14 +7,17 @@ class ProductsController < ApplicationController
    end
    if params[:min_price].present?
      @products = @products.where("price >= ?", params[:min_price])
-   end 
+   end
    if params[:max_price].present?
     @products = @products.where("price <= ?", params[:max_price])
-  end 
-  end 
+  end
+  #if params[:query_text].present?
+  #  @products = @products.search(params[:query_text])
+  #end
+  end
 
   def show
-    product   
+    product
   end
 
   def new
@@ -34,8 +37,8 @@ class ProductsController < ApplicationController
   def edit
     product
   end
-  
-  def update      
+
+  def update
     if product.update (product_params)
       redirect_to products_path, notice: t('.updated')
     else
@@ -45,18 +48,18 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    product.destroy 
+    product.destroy
     redirect_to products_path, notice: t('.destroyed')
   end
-  
 
-  
+
+
 
     def product_params
-     params.require(:product).permit(:title, :description, :price, :photo, :category_id)  
+     params.require(:product).permit(:title, :description, :price, :photo, :category_id)
     end
-    
-  
+
+
     private
     def product
     @product = Product.find(params[:id])

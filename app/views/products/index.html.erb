@@ -1,18 +1,20 @@
 <%= turbo_frame_tag 'categories' do %>
     <h2><%= t('.title') %></h2> 
     <%= link_to t('.all'), products_path %>
-    <%= render partial: 'category', collection: @categories %><br>
-    
-
-     <%= form_with url: products_path, method: :get do |form| %>
+    <%= render partial: 'category', collection: @categories %><br> 
+    <%= form_with url: products_path, method: :get do |form| %>
+      <%=form.text_field :query_text, placeholder: t('.query_text'),
+       onChange: 'this.form.requestSubmit()', value: params[:query_text]%>
       <%=form.number_field :min_price, placeholder: t('.min_price'),
        onChange: 'this.form.requestSubmit()', value: params[:min_price]%>
       <%=form.number_field :max_price, placeholder: t('.max_price'),
-       onChange: 'this.form.requestSubmit()', value: params[:max_price]%>  
-     <% end %>
-     <div>Total
+       onChange: 'this.form.requestSubmit()', value: params[:max_price]%>
+      <%=form.select :order_by, options_for_select([["Recientes", "newest"],["Más Caros", "expensive"],
+      ["Más Baratos", "cheapest"], params[:order_by]]) %> 
+      <% end %>
+    <div>Total
         <%= @products.count %> <%= t('.title_1') %>
-     </div>
+    </div>
     <div>Fecha<%= Date.today %></div>
     <%= render partial: 'product', collection: @products %>
 

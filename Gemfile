@@ -10,7 +10,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+ gem "sqlite3", "~> 1.4"
+#  gem "pg", "~> 1.1"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
@@ -41,6 +42,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
+gem "pg_search", "~> 2.3"
 
 # Use Sass to process CSS
 # gem "sassc-rails"
@@ -62,6 +64,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  # Background jobs
+  gem "sidekiq", "~> 7.0"
 end
 
 group :test do
@@ -71,4 +75,3 @@ group :test do
   gem "webdrivers"
 end
 
-gem "sidekiq", "~> 7.0"
