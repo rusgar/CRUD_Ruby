@@ -1,12 +1,22 @@
 <%= turbo_frame_tag 'categories' do %>
-    <h2><%= t('.title') %></h2>    
+    <h2><%= t('.title') %></h2> 
     <%= link_to t('.all'), products_path %>
     <%= render partial: 'category', collection: @categories %><br>
-    <div>Total
+    
+
+     <%= form_with url: products_path, method: :get do |form| %>
+      <%=form.number_field :min_price, placeholder: t('.min_price'),
+       onChange: 'this.form.requestSubmit()', value: params[:min_price]%>
+      <%=form.number_field :max_price, placeholder: t('.max_price'),
+       onChange: 'this.form.requestSubmit()', value: params[:max_price]%>  
+     <% end %>
+     <div>Total
         <%= @products.count %> <%= t('.title_1') %>
-    </div>
+     </div>
     <div>Fecha<%= Date.today %></div>
     <%= render partial: 'product', collection: @products %>
+
+
 
 <% end %>
 

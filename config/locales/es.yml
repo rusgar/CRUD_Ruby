@@ -33,6 +33,8 @@ es:
      title: 'Zapatillas de Running:'
      title_1: 'Zapatillas'
      all: 'Todos'
+     min_price: 'Precio mínimo'
+     max_price: 'Precio maximo'
     create:
      created: 'Producto guardado correctamente'
     update:
