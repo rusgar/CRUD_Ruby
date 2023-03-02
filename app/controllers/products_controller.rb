@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
   def index
-   @categories = Category.all.order(name: :asc).load_async
-   @products = Product.with_attached_photo.order(created_at: :desc).load_async
+   @categories = Category.all.order(name: :asc)
+   @products = Product.all.order(created_at: :desc)
+   @pagy = pagy_countless(@products, items:5) 
    if params[:category_id]
     @products = @products.where(category_id: params[:category_id])
    end
@@ -10,10 +11,14 @@ class ProductsController < ApplicationController
    end
    if params[:max_price].present?
     @products = @products.where("price <= ?", params[:max_price])
-  end
-  #if params[:query_text].present?
-  #  @products = @products.search(params[:query_text])
-  #end
+   end
+   orders_by= Product::ORDER_BY.fetch(params[:order_by]&.to_sym, Product::ORDER_BY[:newest])
+      #@products = @products.order(order_by) #(Errores pues no me busca y el metodo es incorrecto)   
+    
+  # if params[:query_text].present?
+  #   @products = @products.search(params[:query_text]) #( la query del text me sale en la url, segun el metodo post, pero se la carga en la busqueda)
+  # end
+    
   end
 
   def show

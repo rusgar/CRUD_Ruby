@@ -26,6 +26,14 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_select 'p', 'Modelo: Macbook Air'
   end
 
+  test 'sort products by expensive price firts' do
+    get products_path(order_by: 'expensive')
+    
+    assert_response :success
+    assert_select '.product', 6
+    assert_select '. product.product:firts-child p', 'Modelo: iMac 27" 2015'
+  end
+
   test ' render a detailed product page' do
     get product_path (products(:PS4))
 

@@ -60,6 +60,9 @@ en:
       min_price: 'Min Price'
       max_price: 'Max Price'
       query_text: 'What do you want to search?'
+      newest: "Recently added"
+      expensive: "Expensive firt"
+      cheapest: "Cheaper firts"
     show:
       edit: 'Edit product'
       delete: 'Delete product'
