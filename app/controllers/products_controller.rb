@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
-   @categories = Category.order(name: :asc)
-   @pagy , @products= pagy_countless(FindProducts.new.call(params), items:12) 
+   @categories = Category.order(name: :asc).load_async
+   @pagy , @products= pagy_countless(FindProducts.new.call(product_params_index).load_async, items: 8)
 
    #Refactorizamos el codigo en find_products.rb
     
@@ -63,21 +63,24 @@ class ProductsController < ApplicationController
 
   def destroy
     product.destroy
-    redirect_to products_path, notice: t('.destroyed')
+    redirect_to products_path, notice: t('.destroyed'), status: :see_other
   end
 
 
+  private
 
-
-    def product_params
+  def product_params
      params.require(:product).permit(:title, :description, :price, :photo, :category_id)
-    end
+  end
 
+  def product_params_index
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
 
-    private
-    def product
+  end
+  
+  def product
     @product = Product.find(params[:id])
 
-    end
+  end
 
 end

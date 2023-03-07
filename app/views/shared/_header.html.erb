@@ -1,5 +1,5 @@
 <%= link_to products_path do %>
-   <h1>Tienda Running</h1>
+   <h1><%= t('app_name') %></h1>
 <% end %>
 <%= button_to link_to t('.add'), new_product_path, style: "color: #1098f7;" %><br>
 <%= button_to link_to t('.categories'), categories_path, style: "color: #8c52ff;"%>

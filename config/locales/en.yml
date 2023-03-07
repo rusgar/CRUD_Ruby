@@ -30,6 +30,8 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  app_name: 'Your Shoes'
+  meta_title: 'Buy and sell your sporting goods !'   
   activerecord:
     models:
       product: Product

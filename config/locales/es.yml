@@ -1,4 +1,6 @@
 es:
+  app_name: 'Tus Zapas'
+  meta_title: 'Compra y vende tus articulos deportivos !'
   shared:
     header:
      add: 'Añadir Producto'

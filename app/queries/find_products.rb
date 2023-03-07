@@ -9,7 +9,7 @@ class FindProducts
         scoped = filter_by_category_id(scoped, params[:category_id])
         scoped = filter_by_min_price(scoped, params[:min_price])
         scoped = filter_by_max_price(scoped, params[:max_price])
-        # scoped = filter_by_query_text(scoped, params[:query_text])
+        scoped = filter_by_query_text(scoped, params[:query_text])
         sort(scoped, params[:order_by])
     end
 
@@ -35,11 +35,11 @@ class FindProducts
 
         scoped.where("price <= ?", max_price)
     end
-    #  def filter_by_query_text(scoped, query_text)
-    #      return scoped unless query_text.present?  
+      def filter_by_query_text(scoped, query_text)
+          return scoped unless query_text.present?  
 
-    #      scoped.search_full_text(query_text)
-    #  end
+          scoped.search_full_text(query_text)
+      end
 
     def sort (scoped, order_by)
         order_by_query = Product::ORDER_BY.fetch(order_by&.to_sym, Product::ORDER_BY[:newest])

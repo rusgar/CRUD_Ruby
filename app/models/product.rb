@@ -1,9 +1,9 @@
 class Product < ApplicationRecord
-    #include PGSearch::Model
-    # pg_search_scope :search_full_text, against: {
-    #     title: 'A',
-    #     description: 'B'
-    #   }
+     include PgSearch::Model
+     pg_search_scope :search_full_text, against: {
+         title: 'A',
+         description: 'B'
+       }
 
     ORDER_BY = { 
        newest: "created_at DESC",
