@@ -24,8 +24,16 @@ es:
             blank: ': Este campo no puede estar vacio'
          price:
             blank: ': Este campo no puede estar vacio' 
+       user:
+        attributes:
+         username: 'invalid'
+         password: 'password.too_long'       
   common:
     confirm: '¿Estás Seguro?'
+  authentication:
+   users:  
+    create:
+     created: 'Tu cuenta se ha creado!'
   products:
     edit:
       title: 'Editar Zapatilla'

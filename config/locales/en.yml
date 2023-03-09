@@ -45,12 +45,22 @@ en:
         photo: 'Photo'
       category:
         name: 'Name'
+    errors:
+     moldels:
+      user:
+       attributes:
+        username: 'invalid'
+        password: 'password.too_long'    
   common:
     confirm: 'Are you sure?'
     back: 'Go Back'
   shared:
     header:
       add: 'Add product'
+  authentication:
+   users:  
+    create:
+     created: 'Your account has been created !'    
   products:
     edit:
       title: 'Edit product'

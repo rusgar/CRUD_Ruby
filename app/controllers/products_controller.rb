@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
    @categories = Category.order(name: :asc).load_async
-   @pagy , @products= pagy_countless(FindProducts.new.call(product_params_index).load_async, items: 8)
+   @pagy , @products= pagy_countless(FindProducts.new.call(product_params_index), items: 8)
 
    #Refactorizamos el codigo en find_products.rb
     
