@@ -1,13 +1,11 @@
 es:
   app_name: 'Tus Zapas'
   meta_title: 'Compra y vende tus articulos deportivos !'
-  shared:
-    header:
-     add: 'Añadir Producto'
-     categories: ' Añadir Tipo'      
   activerecord:
     models:
       product: Producto
+      user: Usuario
+      category: Categoría
     attributes:
       product:
        title: 'Titulo'
@@ -16,24 +14,39 @@ es:
        photo: 'Foto'
     errors:
       models:
-       product:
-        attributes:
+       products:
          title:
-            blank: ': Este campo no puede estar vacio'
-         description:
-            blank: ': Este campo no puede estar vacio'
+           blank: 'no puede estar vacio'
+         descripticon:
+           blank: 'no puede estar vacio'
          price:
-            blank: ': Este campo no puede estar vacio' 
-       user:
-        attributes:
-         username: 'invalid'
-         password: 'password.too_long'       
+           blank: 'no puede estar vacio'  
+
+    user:
+      email: 'Correo electrónico'
+      username: 'Usuario'
+      password: 'Contraseña'
+    category:
+       name: 'Nombre'     
+     
   common:
     confirm: '¿Estás Seguro?'
+    back: 'Volver'
+    not_logged_in: 'Tienes que hacer login o crearte una cuenta'
+    not_authorized: 'No tienes permisos para esta acción'
+    not_found: 'No se ha encontrado'
+  shared:
+    header:
+     add: 'Añadir Producto'
+     categories: ' Añadir Tipo'      
   authentication:
-   users:  
-    create:
-     created: 'Tu cuenta se ha creado!'
+    users:  
+     create:
+       created: 'Tu cuenta se ha creado!'
+    sessions:  
+     create:
+       created: 'Bienvenido !' 
+       failed: 'Logo Invalido!!!!'          
   products:
     edit:
       title: 'Editar Zapatilla'
@@ -49,11 +62,13 @@ es:
      newest: "Añadidos recientemente"
      expensive: "Más caro"
      cheapest: "Más barato"
-
+    show:
+      edit: 'Editar producto'
+      delete: 'Borrar producto' 
     create:
-     created: 'Producto guardado correctamente'
+      created: 'Producto guardado correctamente'
     update:
-     updated: 'Tu producto se ha actualizado correctamente'
+      updated: 'Tu producto se ha actualizado correctamente'
     destroy:
       destroyed: 'Tu producto se ha eliminado correctamente'
   categories:

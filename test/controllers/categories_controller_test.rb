@@ -2,6 +2,7 @@ require "test_helper"
 
 class CategoriesControllerTest < ActionDispatch::IntegrationTest
   setup do
+    login
     @category = categories(:clothes)
   end
 
@@ -22,6 +23,7 @@ class CategoriesControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to categories_url
   end
+
   test "should get edit" do
     get edit_category_url(@category)
     assert_response :success
