@@ -46,7 +46,10 @@ en:
       user:
         email: 'Email'
         username: 'Username'
-        password: 'Password'  
+        password: 'Password' 
+      sessions:
+        login: 'Name'
+        password: 'Password'
       category:
         name: 'Name'
   common:
@@ -58,6 +61,9 @@ en:
   shared:
     header:
        add: 'Add product'
+       login: 'Login'
+       register: 'Register'
+       logout: 'Logout'
   authentication:
     users:  
      create:
@@ -65,7 +71,9 @@ en:
     sessions:  
      create:
        created: 'Welcome !' 
-       failed: 'Invalid login!!!!'      
+       failed: 'Invalid login!!!!' 
+     destroy:
+        destroyed: 'Session ended. Bye!'       
   products:
     edit:
       title: 'Edit product'

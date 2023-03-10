@@ -12,23 +12,15 @@ es:
        description: 'Descripcion'
        price: 'Precio'
        photo: 'Foto'
-    errors:
-      models:
-       products:
-         title:
-           blank: 'no puede estar vacio'
-         descripticon:
-           blank: 'no puede estar vacio'
-         price:
-           blank: 'no puede estar vacio'  
-
-    user:
-      email: 'Correo electrónico'
-      username: 'Usuario'
-      password: 'Contraseña'
-    category:
-       name: 'Nombre'     
-     
+      user:
+        email: 'Correo electrónico'
+        username: 'Usuario'
+        password: 'Contraseña'
+      sessions:
+        login: 'Nombre'
+        password: 'Contraseña'
+      category:
+       name: 'Nombre'   
   common:
     confirm: '¿Estás Seguro?'
     back: 'Volver'
@@ -38,7 +30,10 @@ es:
   shared:
     header:
      add: 'Añadir Producto'
-     categories: ' Añadir Tipo'      
+     categories: ' Añadir Tipo' 
+     login: 'Acceso'
+     register: 'Registro'
+     logout: 'Salir'     
   authentication:
     users:  
      create:
@@ -46,7 +41,9 @@ es:
     sessions:  
      create:
        created: 'Bienvenido !' 
-       failed: 'Logo Invalido!!!!'          
+       failed: 'Logo Invalido!!!!'  
+     destroy:
+        destroyed: 'Tu sesión ha terminado! Hasta la próxima'          
   products:
     edit:
       title: 'Editar Zapatilla'
