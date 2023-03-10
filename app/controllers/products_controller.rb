@@ -40,6 +40,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    # @product = Current.user.products.new(product_params) (Una manera haciendo scopeding)
     @product = Product.new(product_params)
     # pp @product
     if @product.save
@@ -75,7 +76,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params_index
-    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by)
+    params.permit(:category_id, :min_price, :max_price, :query_text, :order_by, :page)
 
   end
   
