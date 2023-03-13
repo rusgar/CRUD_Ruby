@@ -61,7 +61,8 @@ es:
      cheapest: "Más barato"
     show:
       edit: 'Editar producto'
-      delete: 'Borrar producto' 
+      delete: 'Borrar producto'
+      view_more_products: 'Ver más productos de %{username}'
     create:
       created: 'Producto guardado correctamente'
     update:
