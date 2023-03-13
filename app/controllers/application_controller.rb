@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
 
   class NotAuthorized < StandardError; end 
 
-      rescue_from NotAuthorized do
-        redirect_to products_path, alert: t('common.not_authorized')  
-      end
+    rescue_from NotAuthorized do
+      redirect_to products_path, alert: t('common.not_authorized')  
+  end
       
   around_action :switch_locale
   before_action :set_current_user
@@ -30,8 +30,12 @@ class ApplicationController < ActionController::Base
      redirect_to new_session_path, alert: t('common.not_logged_in') unless Current.user
   end 
   
-  def authorize! product
-   is_allowed = product.user_id == Current.user.id
+  def authorize! record = nil
+   is_allowed =  if record
+     record.user_id == Current.user.id
+   else 
+     Current.user.admin?
+   end 
    raise NotAuthorized unless is_allowed
    #redirect_to products_path, alert: t('common.not_authorized') unless is_allowed
   end  
