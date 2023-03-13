@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_10_122652) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_13_145310) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -45,6 +45,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_122652) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_favorites_on_product_id"
+    t.index ["user_id", "product_id"], name: "index_favorites_on_user_id_and_product_id", unique: true
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -70,6 +80,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_10_122652) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "favorites", "products"
+  add_foreign_key "favorites", "users"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
 end

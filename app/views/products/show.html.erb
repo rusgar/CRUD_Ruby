@@ -14,3 +14,6 @@
  } if @product.owner %>
 
 <%= button_to link_to t('.view_more_products', username: @product.user.username), user_path(@product.user.username) %>
+
+<%= button_to link_to '💘', favorites_path(product_id: @product.id ),data:{ 
+    turbo_method: :post  }  %>
