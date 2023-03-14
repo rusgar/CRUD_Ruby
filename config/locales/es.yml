@@ -33,7 +33,8 @@ es:
      categories: ' Añadir Tipo' 
      login: 'Acceso'
      register: 'Registro'
-     logout: 'Salir'     
+     logout: 'Salir'
+     favorites: 'Mis favoritos'     
   authentication:
     users:  
      create:
@@ -85,4 +86,7 @@ es:
     destroy:
       destroyed: 'Tu categoría se ha eliminado correctamente'
     new:
-      title: 'Añadir categoría'    
+      title: 'Añadir categoría'
+  favorites:
+    index:
+     title: 'Mis Favoritos'       

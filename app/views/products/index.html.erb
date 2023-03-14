@@ -19,16 +19,14 @@
     <div class="products">
     <%= render partial: 'product', collection: @products %>
     </div>
-    
-    <%=turbo_frame_tag "products-#{@pagy.page}", class: "product" do %>
-      <%= render partial: 'product', collection: @products %>
-      <%= turbo_frame_tag "products-#{@pagy.next}", class: "product", src: pagy_url_for(@pagy, @pagy.next),
-       loading: :lazy  if @pagy.next %>
+
+    <%=turbo_frame_tag :products do %>
+      <%=turbo_frame_tag "products-#{@pagy.page}", class: "product" do %>
+        <%= render partial: 'product', collection: @products %>
+        <%= turbo_frame_tag "products-#{@pagy.next}", class: "product", src: pagy_url_for(@pagy, @pagy.next),
+            loading: :lazy  if @pagy.next %>
+       <%end %> 
     <%end %> 
-
-
-
-
 <% end %>
 
 
